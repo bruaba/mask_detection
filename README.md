@@ -52,7 +52,7 @@ $ python3 detect_mask_image.py "the_model" "Dataset"
 
 
 ## Rapport
-Le rapport concernat ce projet est contenu dans le fichier [MARONE_Rapport_Projet_DetecteurDeMasque](#https://github.com/bruaba/mask_detection/blob/main/MARONE_Rapport_Projet_DetecteurDeMasque.pdf)
+Le rapport concernat ce projet est contenu dans le fichier [MARONE_Rapport_Projet_DetecteurDeMasque](https://github.com/bruaba/mask_detection/blob/main/MARONE_Rapport_Projet_DetecteurDeMasque.pdf)
 
 ## Auteurs
 Cheikh Ahmet Tidiane Chérif MARONE 
