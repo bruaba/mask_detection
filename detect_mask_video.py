@@ -8,6 +8,7 @@ import imutils
 import time
 import cv2
 import os
+import time
 
 def detect_and_predict_mask(frame, faceNet, maskNet):
 	# grab the dimensions of the frame and then construct a blob
@@ -77,16 +78,20 @@ weightsPath = r"face_detector\res10_300x300_ssd_iter_140000.caffemodel"
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
 # load the face mask detector model from disk
-maskNet = load_model("mask_detector.h5")
+maskNet = load_model("Model/mask_detector_Adam_2021_01_23_20_20_54.h5")
 
 # initialize the video stream
 print("[INFO] starting video stream...")
 vs = VideoStream(src=0).start()
 
+start_time = time.time()
+frame_count = 0
+
 # loop over the frames from the video stream
 while True:
 	# grab the frame from the threaded video stream and resize it
 	# to have a maximum width of 400 pixels
+	frame_count += 1
 	frame = vs.read()
 	frame = imutils.resize(frame, width=400)
 
@@ -99,32 +104,27 @@ while True:
 	for (box, pred) in zip(locs, preds):
 		# unpack the bounding box and predictions
 		(startX, startY, endX, endY) = box
-		(mask, wearedMask, withoutMask) = pred
+		(withoutMask, mask, wearedMask) = pred
 
 		# determine the class label and color we'll use to draw
 		# the bounding box and text
 
-		if mask > withoutMask:
+		if mask > withoutMask and mask > wearedMask:
 			label = "with_mask"
-		else:
+		elif withoutMask > wearedMask and withoutMask > mask:
 			label = "without_mask"
-
-		if mask > wearedMask:
-			label = "with_mask"
 		else:
 			label = "mask_weared_incorrect"
 
-		if wearedMask > withoutMask:
-			label = "mask_weared_incorrect"
+		if label == "with_mask":
+			color = (0, 255, 0)
+		elif label == "without_mask":
+			color = (0, 0, 255)
 		else:
-			label = "without_mask"
-
-		color = (0, 255, 0) if label == "with_mask"
-		color = (0, 0, 255) if label == "mask_weared_incorrect"
-		color = (255, 0, 0) if label == "without_mask"
+			color = (255, 255, 0)
 
 		# include the probability in the label
-		label = "{}: {:.2f}%".format(label, max(pred) * 100)
+		label = "{}: {:.2f}%".format(label, max(mask, wearedMask, withoutMask) * 100)
 
 		# display the label and bounding box rectangle on the output
 		# frame
@@ -133,6 +133,10 @@ while True:
 		cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
 
 	# show the output frame
+	elapsed_time = time.time() - start_time
+	fps = frame_count / elapsed_time
+	cv2.putText(img=frame, text='FPS : ' + str(round(fps, 2)), org=(10, 20), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(255,255,255), thickness=1)
+
 	cv2.imshow("Frame", frame)
 	key = cv2.waitKey(1) & 0xFF
 
