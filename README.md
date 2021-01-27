@@ -1,6 +1,6 @@
 # COVID - Mask Detection
 
-Projet d'intelligence artificel en 5A ILC à l'ESIREM
+Projet d'intelligence artificiel en 5A ILC à l'ESIREM
 
 ## Table of contents
 * [Objectif](#objectif)
