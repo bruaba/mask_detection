@@ -32,7 +32,7 @@ Dans ce projet, on a utilisé les technologies suivante:
 * Matplotlib
 * Keras
 
-On peut installer les requerements avec la commande suivante:
+On peut installer les "requirements" avec la commande suivante:
 
 ```
 $ pip install -r requirements.txt
