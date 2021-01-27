@@ -3,7 +3,7 @@
 Projet d'intelligence artificiel en 5A ILC à l'ESIREM
 
 ## Table of contents
-* [Objectif](#objectif)
+* [Présentation](#présentation)
 * [Technology](#technology)
 * [Setup](#setup)
 * [Rapport](#rapport)
@@ -11,13 +11,21 @@ Projet d'intelligence artificiel en 5A ILC à l'ESIREM
 * [Ecole](#Ecole)
 
 
-## Objectif
+## Présentation
 
-L’objectif de ce projet est de permettre aux étudiants de voir l’ensemble de la chaine 
-permettant de concevoir une application à base de Machine Learning (incluant les méthodes de Deep-Learning présentées lors des cours).
+L’objectif de ce projet est de permettre aux étudiants de voir l’ensemble de la chaine permettant  de  concevoir  une  application  à  base  de  Machine  Learning  (incluant  les méthodes de Deep-Learning présentées lors des cours). 
+Le projet porte donc sur les 3 axes principaux suivants:
+* 1. Conception  d’une  base  d’images  annotées  destinée  à  l’entrainement  des modèles/algorithmes de Machine Learning.
+* 2.Sélection  et  entrainement  d’un  algorithme/modèle  adapté  à  l’application choisie.
+* 3.Mise en œuvre temps réel de cet algorithme pour présentation des résultats obtenus.
+
+Elle permet de détecter 3 classes d’objets:
+* 1.Label "without_mask": Visages sans masque
+* 2.Label "mask_weared_incorrect": Visages avec un masque mal porté
+* 3.Label "with_mask":Visages avec un masque (bien porté)
 
 
-## Technology
+## Technologie
 Dans ce projet, on a utilisé les technologies suivante:
 * Tensorflow
 * OpenCV
@@ -56,7 +64,7 @@ $ python3 detect_mask_image.py "the_model" "Dataset"
 Le fichier facemaskrecognitionv2.ipynb correspond au train avec google colab
 
 ## Rapport
-Le rapport concernat ce projet est contenu dans le fichier [MARONE_Rapport_Projet_DetecteurDeMasque](https://github.com/bruaba/mask_detection/blob/main/MARONE_Rapport_Projet_DetecteurDeMasque.pdf)
+Le rapport concernat ce projet est contenu dans le fichier [Rapport](https://github.com/bruaba/mask_detection/blob/main/Rapport.pdf)
 
 ## Auteurs
 Cheikh Ahmet Tidiane Chérif MARONE 
