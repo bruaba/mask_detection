@@ -1,0 +1,25 @@
+<annotation>
+  <folder/>
+  <filename>000008587c7e6666.jpg</filename>
+  <database/>
+  <annotation/>
+  <image/>
+  <size>
+    <height>1365</height>
+    <width>2048</width>
+    <depth>3</depth>
+  </size>
+  <segmented/>
+  <object>
+    <name>with_mask</name>
+    <pose/>
+    <truncated/>
+    <difficult/>
+    <bndbox>
+      <xmin>776.2972972972973</xmin>
+      <ymin>257.4594594594595</ymin>
+      <xmax>1329.0</xmax>
+      <ymax>1028.0</ymax>
+    </bndbox>
+  </object>
+</annotation>

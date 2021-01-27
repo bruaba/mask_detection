@@ -1,0 +1,37 @@
+<annotation>
+  <folder/>
+  <filename>3000b0f6fefad0c0.jpg</filename>
+  <database/>
+  <annotation/>
+  <image/>
+  <size>
+    <height>382</height>
+    <width>728</width>
+    <depth>3</depth>
+  </size>
+  <segmented/>
+  <object>
+    <name>with_mask</name>
+    <pose/>
+    <truncated/>
+    <difficult/>
+    <bndbox>
+      <xmin>122.74418604651163</xmin>
+      <ymin>70.95348837209303</ymin>
+      <xmax>193.67441860465118</xmax>
+      <ymax>136.06976744186045</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>with_mask</name>
+    <pose/>
+    <truncated/>
+    <difficult/>
+    <bndbox>
+      <xmin>515.7674418604652</xmin>
+      <ymin>88.39534883720933</ymin>
+      <xmax>586.6976744186046</xmax>
+      <ymax>154.67441860465112</ymax>
+    </bndbox>
+  </object>
+</annotation>

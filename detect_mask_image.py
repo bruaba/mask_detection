@@ -9,13 +9,13 @@ Created on Sat Jan 23 22:07:34 2021
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
-from imutils.video import VideoStream
 import numpy as np
 import imutils
 import time
 import cv2
 import os
 import time
+import sys
 
 def detect_and_predict_mask(frame, faceNet, maskNet):
 	# grab the dimensions of the frame and then construct a blob
@@ -85,13 +85,16 @@ weightsPath = r"face_detector\res10_300x300_ssd_iter_140000.caffemodel"
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
 # load the face mask detector model from disk
-maskNet = load_model("Model/mask_detector_Adam_2021_01_23_20_20_54.h5")
+model_name = sys.argv[1]
+maskNet = load_model("Model/"+model_name+".h5")
+
+Dataset = sys.argv[2]
 
 # initialize the video stream
 
 
 # loop over the frames from the video stream
-for dirname, _, filenames in os.walk('VALIDATION/JPEGImages/'):
+for dirname, _, filenames in os.walk(Dataset+'/images/'):
 	for filename in filenames:
 		img_path = os.path.join(dirname, filename)
 		frame = cv2.imread(img_path)

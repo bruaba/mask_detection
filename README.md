@@ -7,8 +7,9 @@ Projet d'intelligence artificiel en 5A ILC à l'ESIREM
 * [Technology](#technology)
 * [Setup](#setup)
 * [Rapport](#rapport)
-* [School](#school)
-* [Authors](#authors)
+* [Auteurs](#auteurs)
+* [Ecole](#Ecole)
+
 
 ## Objectif
 
@@ -26,7 +27,7 @@ Dans ce projet, on a utilisé les technologies suivante:
 On peut installer les requerements avec la commande suivante:
 
 ```
-$ pip install -r requirement.txt
+$ pip install -r requirements.txt
 ```
 
 ## Setup
@@ -34,12 +35,14 @@ Pour demarer le projet, on peut soit refaire un entrainement en executant la com
 ```
 $ python3 train.py "Dataset" 
 ```
-Il faut noter aussi qu'il est préferable d'avoir des images .jpg et deux dossier dans le dataset:
+Il est à noter aussi qu'il est préferable d'avoir des images .jpg et deux dossier dans le dataset:
 * un dossier images 
 * un dossier annotations
 
 Au lieu de faire un entrainement, on peut executer directement le modèle qui se trouve dans le dossier Model.
+
 Ainsi on peut:
+
 * soit on démarre un flux vidéo avec le nom du model en paramètre
 ```
 $ python3 detect_mask_video.py "the_model" 
@@ -50,6 +53,7 @@ $ python3 detect_mask_video.py "the_model"
 $ python3 detect_mask_image.py "the_model" "Dataset"
 ```
 
+Le fichier facemaskrecognitionv2.ipynb correspond au train avec google colab
 
 ## Rapport
 Le rapport concernat ce projet est contenu dans le fichier [MARONE_Rapport_Projet_DetecteurDeMasque](https://github.com/bruaba/mask_detection/blob/main/MARONE_Rapport_Projet_DetecteurDeMasque.pdf)

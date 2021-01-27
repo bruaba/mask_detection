@@ -1,4 +1,4 @@
-# import the necessary packages
+ # import the necessary packages
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
@@ -9,6 +9,7 @@ import time
 import cv2
 import os
 import time
+import sys
 
 def detect_and_predict_mask(frame, faceNet, maskNet):
 	# grab the dimensions of the frame and then construct a blob
@@ -77,8 +78,9 @@ prototxtPath = r"face_detector\deploy.prototxt"
 weightsPath = r"face_detector\res10_300x300_ssd_iter_140000.caffemodel"
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
+model_name = sys.argv[1]
 # load the face mask detector model from disk
-maskNet = load_model("Model/mask_detector_Adam_2021_01_23_20_20_54.h5")
+maskNet = load_model("Model/"+model_name+".h5")
 
 # initialize the video stream
 print("[INFO] starting video stream...")

@@ -1,0 +1,37 @@
+<annotation>
+  <folder/>
+  <filename>fcfebe7ee7c10000.jpg</filename>
+  <database/>
+  <annotation/>
+  <image/>
+  <size>
+    <height>1600</height>
+    <width>1200</width>
+    <depth>3</depth>
+  </size>
+  <segmented/>
+  <object>
+    <name>with_mask</name>
+    <pose/>
+    <truncated/>
+    <difficult/>
+    <bndbox>
+      <xmin>355.46153846153845</xmin>
+      <ymin>455.1538461538462</ymin>
+      <xmax>540.0769230769231</xmax>
+      <ymax>722.4615384615385</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>with_mask</name>
+    <pose/>
+    <truncated/>
+    <difficult/>
+    <bndbox>
+      <xmin>770.8461538461538</xmin>
+      <ymin>470.53846153846155</ymin>
+      <xmax>1140.076923076923</xmax>
+      <ymax>874.3846153846152</ymax>
+    </bndbox>
+  </object>
+</annotation>
